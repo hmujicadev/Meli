@@ -1,0 +1,23 @@
+.breadcrumbs-wrapper{
+  margin: 16px 0;
+  font-size: 14px;
+  color: $midGray_color;
+  padding:0 5px;
+  .breadcrumb{
+    display: inline-flex;
+    align-items: center;
+    @include devices(mobile){
+      line-height: 1.7;
+    }
+    span{
+      cursor:pointer;
+    }
+
+    &:last-child{
+      color: $darkGray_color;
+    }
+    &:last-child > svg:last-child{
+      display: none;
+    }  
+  }
+}

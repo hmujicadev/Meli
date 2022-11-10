@@ -1,0 +1,39 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %headings !optional;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin devices($breakpoint) {
+  @if $breakpoint == mobile {    
+    @media (max-width: 767.98px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {    
+  @media (min-width:600px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+@if $breakpoint == desktop {
+  @media (min-width:992px) {
+    @content;
+  }
+}
+}

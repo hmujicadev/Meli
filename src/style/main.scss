@@ -1,0 +1,17 @@
+// Folder style
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+@import 'utils';
+@import 'common';
+
+// Components
+@import 'components/header/header.scss';
+@import 'components/breadcrumbs/breadcrumbs.scss';
+@import 'components/empty/empty.scss';
+
+// Pages
+@import 'pages/home/home.scss';
+@import 'pages/searchList/searchList.scss';
+@import 'pages/detail/detail.scss';
+

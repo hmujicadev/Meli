@@ -1,0 +1,8 @@
+.home{
+  @include flex-center;
+  background-color: $lightGray_color;
+  .home-image{
+    max-height: calc(100vh - $header_height);
+    max-width: 100%;
+  }
+}
