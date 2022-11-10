@@ -1,13 +1,14 @@
 import { meliApi } from 'api';
+
 import { PageMeta,Empty } from 'components';
 import { PAGE_NAMES } from 'constants/commonConstants';
 import { FC, ReactElement } from 'react';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { formatAmount } from 'utils/helpers';
 
 const Detail: FC = (): ReactElement => {
-  // const { postSlug } = useParams();
-  const { data, isSuccess, isLoading, isError } = meliApi.useSearchedProductDetailQuery('sdasd' || '');
+  const { postSlug } = useParams();
+  const { data, isSuccess, isLoading, isError } = meliApi.useSearchedProductDetailQuery(postSlug || '');
 
   return (
     <>
