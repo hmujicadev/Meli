@@ -1,14 +1,15 @@
 import { FC, useEffect, useState, useLayoutEffect } from 'react';
 import logoImg from 'images/Logo_ML2x.png';
 import searchImg from 'images/ic_Search2x.png';
-import { useLazySearchProductsQuery } from 'api/meli/meliApi';
+import { meliApi } from 'api';
+
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppDispatch } from 'store/store';
 import { setItems } from 'store/listItem/listItemSlice';
 
 const Header:FC = () => {
   const [searchParams] = useSearchParams();
-  const [getProducts, { data, isSuccess }, lastPromiseInfo] = useLazySearchProductsQuery();
+  const [getProducts, { data, isSuccess }, lastPromiseInfo] = meliApi.useLazySearchProductsQuery();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [search, setSearch] = useState<string>('');

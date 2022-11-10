@@ -25,29 +25,8 @@ jest.mock('components', () => ({
 
 describe('Home page', () => {
   test('Check image element exist', () => {
-    // Render component with Redux Provider with some preloaded state
+    // Render component with Redux Provider without some preloaded state
     renderWithProviders(<Home />)
     expect(screen.getByAltText<HTMLImageElement>(/imagen para el home/).alt).toEqual('imagen para el home');
-
-
-    /*
-      According to Testing Library philosophy, we should act as users,
-      so we need to find elements not by id or class,
-      but by visual or text references.
-
-      So first we click on element with text that calling to action.
-    */
-    // await userEvent.click(screen.getByText(BUTTON_TEXT));
-
-    /*
-      Then we need to find an element that should be changed.
-      In our case, these are the elements that are right above their descriptions
-      (we get them with closest() method).
-      Testing Library has a great method to get elements by labels
-      (https://testing-library.com/docs/queries/bylabeltext/),
-      but for this you need to design your components with such testing in mind.
-    */
-    // expect(screen.getByText(COUNTER_DESCRIPTION.LOCAL).closest('div')).toHaveTextContent('1');
-    // expect(screen.getByText(COUNTER_DESCRIPTION.GLOBAL).closest('div')).toHaveTextContent('43');
   });
 });

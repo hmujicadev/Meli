@@ -2,12 +2,13 @@ import { FC, ReactElement, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from 'store/store';
 import RightChevron from 'images/chevron-right-solid.svg';
-import { useLazySearchProductsQuery } from 'api/meli/meliApi';
+import { meliApi } from 'api';
+
 import { useAppDispatch } from 'store/store';
 import { setItems } from 'store/listItem/listItemSlice';
 
 const Breadcrumbs:FC = (): ReactElement => {
-  const [getProducts, { data, isSuccess }] = useLazySearchProductsQuery();
+  const [getProducts, { data, isSuccess }] = meliApi.useLazySearchProductsQuery();
   const categories = useAppSelector(state => state.listItems.value.categories);
   if (categories?.length) {
     localStorage.setItem('categories', JSON.stringify(categories));

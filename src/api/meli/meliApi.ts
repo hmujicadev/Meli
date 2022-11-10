@@ -75,3 +75,4 @@ export const meliApi = createApi({
 });
 
 // Exportación de hooks para su uso en componentes funcionales, autogenerados en base a los endpoints definidos
+export const {useLazySearchProductsQuery , useSearchedProductDetailQuery} = meliApi
