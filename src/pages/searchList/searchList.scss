@@ -1,82 +1,87 @@
-.search-List__wrapper{
-  background-color: white;
+.search-List__wrapper {
   width: 100%;
-  .item-list__wrapper{
-    min-height: 212px;
+  background-color: white;
+  .item-list__wrapper {
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    border-bottom: 1px solid $lightGray_color;
+    min-height: 212px;
     box-sizing: content-box;
-    margin:0 16px ;
-    .item-image__wrapper{
-      cursor: pointer;
+    border-bottom: 1px solid $lightGray_color;
+    margin: 0 16px ;
+    grid-template-columns: repeat(12,1fr);
+    .item-image__wrapper {
       max-height: 212px;
+      cursor: pointer;
       grid-column: 1 / 2;
-      @include devices(desktop){
-        grid-column: 1 / 2;
+
+      @include devices(desktop) {
         max-height: 212px;
-      } 
-      .item-image{
-        margin: 16px 16px 16px 0;
-        height: 180px;
+        grid-column: 1 / 2;
+      }
+      .item-image {
         width: 180px;
+        height: 180px;
         border-radius: 4px;
+        margin: 16px 16px 16px 0;
       }
     }
-    .item-info__wrapper{
-      grid-column: 2 / 13;
+    .item-info__wrapper {
       align-self: center;
-      @include devices(desktop){
-        grid-column: 2 / 12;
+      grid-column: 2 / 13;
+
+      @include devices(desktop) {
         align-self: center;
-      } 
-      
-      .item-info__header{
+        grid-column: 2 / 12;
+      }
+
+      .item-info__header {
         @include flex-center;
-        padding-bottom: 32px;
         justify-content: space-between;
-        .item-info__price{
-          cursor: pointer;
-          @include flex-center;
+        padding-bottom: 32px;
+        .item-info__price {
           justify-content: flex-start;
+          cursor: pointer;
           font-size: 24px;
-          span{
+
+          @include flex-center;
+          span {
             margin-right: 8px;
           }
-          img{
+          img {
             height: 17px;
           }
         }
-        @include devices(mobile){
-          padding-bottom: 16px;
-          @include flex-column;
-          align-items:flex-start;
+
+        @include devices(mobile) {
           flex-direction: column-reverse;
-          .item-info__address{
+          align-items: flex-start;
+          padding-bottom: 16px;
+
+          @include flex-column;
+          .item-info__address {
             align-self: flex-start;
           }
         }
-        
-        .item-info__location{
+
+        .item-info__location {
           font-size: 12px;
         }
       }
-      
-      .item-info__title{
+
+      .item-info__title {
         font-size: 18px;
-        span{
+        span {
           cursor: pointer;
         }
       }
-      .item-info__condition{
+      .item-info__condition {
         font-size: 18px;
-        span{
-          text-transform: capitalize;
+        span {
           cursor: pointer;
+          text-transform: capitalize;
         }
       }
 
-      .item-info__address{
+      .item-info__address {
         cursor: default;
         font-size: 12px;
       }

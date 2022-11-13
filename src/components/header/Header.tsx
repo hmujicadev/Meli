@@ -1,4 +1,4 @@
-import { FC, useEffect, useState, useLayoutEffect } from 'react';
+import React, { FC, useEffect, useState, useLayoutEffect, ReactElement } from 'react';
 import logoImg from 'images/Logo_ML2x.png';
 import searchImg from 'images/ic_Search2x.png';
 import { meliApi } from 'api';
@@ -7,7 +7,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppDispatch } from 'store/store';
 import { setItems } from 'store/listItem/listItemSlice';
 
-const Header:FC = () => {
+const Header:FC = ():ReactElement => {
   const [searchParams] = useSearchParams();
   const [getProducts, { data, isSuccess }, lastPromiseInfo] = meliApi.useLazySearchProductsQuery();
   const dispatch = useAppDispatch();
@@ -24,7 +24,7 @@ const Header:FC = () => {
       getProducts(search);
     }
 
-    navigate(`/items?search=${search}`);
+    // Navigate(`/items?search=${search}`);
   };
 
   const handleSearch = (value:string) => {
@@ -37,10 +37,12 @@ const Header:FC = () => {
   };
 
   useEffect(() => {
-    if (isSuccess) {
-      dispatch(setItems(data));
-      navigate(`/items?search=${search}`);
-    }
+    (async () => {
+      if (isSuccess) {
+        dispatch(await setItems(data));
+        navigate(`/items?search=${search}`);
+      }
+    })();
   }, [data]);
 
   useLayoutEffect(() => {

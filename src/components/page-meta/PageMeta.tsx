@@ -1,8 +1,6 @@
 import { FC, memo } from 'react';
 import { Helmet } from 'react-helmet-async';
-
 import { APP_NAME } from '../../constants/commonConstants';
-
 import favicon from 'images/Logo_ML2x.png';
 
 export type Props = {

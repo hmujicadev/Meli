@@ -1,67 +1,70 @@
-header{
-  background-color: $header_color;
+header {
+  width: 100%;
   height: $header_height;
   padding: 10px;
-  width: 100%;
+  background-color: $header_color;
+
   @include flex-center;
-  
-  .header-items-wrapper{
+
+  .header-items-wrapper {
+    max-width: $container_maxWidth;
     flex-basis: 100%;
     transition: 1s;
-    max-width: $container_maxWidth;
+
     @include flex-center;
-    @include devices(tablet){
+
+    @include devices(tablet) {
       flex-basis: 80%;
       transition: 1s;
-    } 
-    
-    .search-logo__image{
-      height:36px;
+    }
+
+    .search-logo__image {
+      height: 36px;
       margin-right: 25px;
-      transition: 0.1s;
       cursor: pointer;
-      &:hover{
+      transition: 0.1s;
+      &:hover {
         transform: scale(1.07);
         transition: 0.2s;
       }
     }
 
-    .search-wrapper{
-      flex-grow: 1;
+    .search-wrapper {
       position: relative;
+      flex-grow: 1;
 
-      .search-input{
-        font-size: 18px;
-        height: 39px;
-        border: none;
-        outline: none;
+      .search-input {
         width: 100%;
-        padding:7px 55px 9px 15px;
+        height: 39px;
+        padding: 7px 55px 9px 15px;
+        border: none;
         box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
-        &::placeholder{
+        font-size: 18px;
+        outline: none;
+        &::placeholder {
           color: $midGray_color;
         }
       }
 
-      .search-input__button{
-        height:39px;
-        width: 40px;
+      .search-input__button {
         position: absolute;
-        padding: 1px;
-        right: 0px;
         top: 0;
-        outline:none;
-        cursor: pointer;
+        right: 0;
+        width: 40px;
+        height: 39px;
+        padding: 1px;
         border: none;
-        .search-input__image{
+        cursor: pointer;
+        outline: none;
+        .search-input__image {
           height: 18px;
           transition: 0.5s;
-          &:hover{
+          &:hover {
             transform: scale(1.06);
             transition: 0.5s;
           }
-        } 
+        }
       }
     }
-  } 
+  }
 }

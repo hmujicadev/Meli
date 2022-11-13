@@ -2,7 +2,7 @@ import { HelmetServerState } from 'react-helmet-async';
 import serialize from 'serialize-javascript';
 import { RootState } from 'store/store';
 
-type TTemplate = {
+type Template = {
   header: string,
   footer: string,
 }
@@ -14,7 +14,7 @@ export const getHtmlTemplate = (props: {
   styleTags: string,
   nonce: string,
 },
-): TTemplate => ({
+): Template => ({
   header: `
     <!DOCTYPE html>
       <html lang="en">

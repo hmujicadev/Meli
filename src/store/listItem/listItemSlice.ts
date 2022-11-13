@@ -17,8 +17,8 @@ export const ListItemSlice = createSlice({
   initialState,
   reducers: {
     setItems(state, action: PayloadAction<any>) {
-      state.value = action.payload,
-      state.isLoading = false,
+      state.value = action.payload;
+      state.isLoading = false;
       state.isError = false;
     },
     setError(state, action: PayloadAction<any>) {

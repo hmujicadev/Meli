@@ -3,9 +3,7 @@ import { PAGE_NAMES } from 'constants/commonConstants';
 import { FC, ReactElement, useEffect } from 'react';
 import homeImage from 'images/home.png';
 
-
 const Home: FC = (): ReactElement => {
-
   useEffect(() => {
     /* Descomenta la siguiente linea para probar Error Boundary */
     // throw new Error('💥 KABOOM 💥');

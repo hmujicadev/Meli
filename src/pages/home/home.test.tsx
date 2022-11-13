@@ -4,13 +4,13 @@ import '@testing-library/jest-dom/extend-expect';
 import 'whatwg-fetch';
 
 import { screen } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
+// Import userEvent from '@testing-library/user-event';
 
 // Using an utilty for rendering with Redux Provider
 import { renderWithProviders } from 'utils';
 
 import { Home } from './Home';
-// import { BUTTON_TEXT, COUNTER_DESCRIPTION } from 'constants/commonConstants';
+// Import { BUTTON_TEXT, COUNTER_DESCRIPTION } from 'constants/commonConstants';
 
 /*
   We do not need a router and a helmet during testing this component,
@@ -26,7 +26,7 @@ jest.mock('components', () => ({
 describe('Home page', () => {
   test('Check image element exist', () => {
     // Render component with Redux Provider without some preloaded state
-    renderWithProviders(<Home />)
+    renderWithProviders(<Home />);
     expect(screen.getByAltText<HTMLImageElement>(/imagen para el home/).alt).toEqual('imagen para el home');
   });
 });

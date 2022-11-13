@@ -7,16 +7,16 @@ body,
 }
 
 .app-wrapper > * {
-  transition: all .3s ease-out;
   width: 100%;
+  transition: all .3s ease-out;
 }
 
 .container {
   width: 100%;
   max-width: $container_maxWidth;
   min-height: calc(80%);
-  margin: 0 auto;
   padding-bottom: 100px;
+  margin: 0 auto;
 }
 
 @font-face {
@@ -43,7 +43,7 @@ body,
 //   text-decoration: none;
 // }
 
-header{
+header {
   background-color: $header_color;
 }
 

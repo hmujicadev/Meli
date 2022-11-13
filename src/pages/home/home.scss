@@ -1,8 +1,8 @@
-.home{
+.home {
   @include flex-center;
   background-color: $lightGray_color;
-  .home-image{
-    max-height: calc(100vh - $header_height);
+  .home-image {
     max-width: 100%;
+    max-height: calc(100vh - $header_height);
   }
 }

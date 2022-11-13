@@ -1,20 +1,21 @@
+/* eslint-disable camelcase */
 export const sortObjectSearch = (data:any) => {
-  if (data.results.length == 0) {
+  try {
+    const sortData = data.available_filters[0].values.sort((o1:any, o2:any) => {
+      if (o1.results > o2.results) {
+        return -1;
+      }
+
+      if (o1.results < o2.results) {
+        return 1;
+      }
+
+      return 0;
+    });
+    return sortData.slice(0, 5);
+  } catch (error) {
     return [];
   }
-
-  const sortData = data.available_filters[0].values.sort((o1:any, o2:any) => {
-    if (o1.results > o2.results) {
-      return -1;
-    }
-
-    if (o1.results < o2.results) {
-      return 1;
-    }
-
-    return 0;
-  });
-  return sortData.slice(0, 5);
 };
 
 export const filterObjectSearch = (data:any) => {
@@ -39,4 +40,3 @@ export const splitAmounts = (data:any, type:string) => {
   const splitNumber = String(data).split('.', 2);
   return type === 'integer' ? splitNumber[0] : splitNumber[1];
 };
-

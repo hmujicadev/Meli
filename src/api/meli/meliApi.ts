@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { createApi, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react';
 import { FIRMA } from '../../constants/apiConstants';
 import { sortObjectSearch, filterObjectSearch, splitAmounts } from '../apiUtils';
@@ -64,15 +65,8 @@ export const meliApi = createApi({
           : { error: description.error as FetchBaseQueryError };
       },
     }),
-
-    // SearchProductById: builder.query({
-    //   query: (id:string) => `/items/${id}`,
-    // }),
-    // searchProductDescription: builder.query({
-    //   query: (id:string) => `/items/${id}/description`,
-    // }),
   }),
 });
 
 // Exportación de hooks para su uso en componentes funcionales, autogenerados en base a los endpoints definidos
-export const {useLazySearchProductsQuery , useSearchedProductDetailQuery} = meliApi
+export const { useLazySearchProductsQuery, useSearchedProductDetailQuery } = meliApi;

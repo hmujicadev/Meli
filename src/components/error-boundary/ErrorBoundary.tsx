@@ -1,5 +1,4 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
-
 import { Error } from 'components/error/Error';
 
 type ErrorState = { isError: boolean }

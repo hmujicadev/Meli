@@ -1,4 +1,4 @@
-import { PageMeta,Breadcrumbs } from 'components';
+import { PageMeta, Breadcrumbs } from 'components';
 import { PAGE_NAMES } from 'constants/commonConstants';
 import { FC, ReactElement } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';

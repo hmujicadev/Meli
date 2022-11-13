@@ -1,17 +1,18 @@
-.empty-wrapper{
+.empty-wrapper {
   @include flex-center;
   background-color: transparent;
-  .empty{
-    background-image: url("images/listEmpty.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  .empty {
     width: 100%;
     height: 210px;
     margin: 20px 0;
-    @include devices(mobile){
-      background-image: url("images/listEmptyMobile.png");
+    background-image: url('images/listEmpty.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include devices(mobile) {
       height: 250px;
+      background-image: url('images/listEmptyMobile.png');
     }
   }
 }
