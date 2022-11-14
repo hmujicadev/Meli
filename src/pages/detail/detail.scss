@@ -74,10 +74,9 @@
     }
   }
   .detail-item__description-wrapper {
+    @include flex-column;
     align-items: flex-start;
     grid-area: description;
-
-    @include flex-column;
     .detail-item__description-title {
       padding-bottom: 32px;
       font-size: 28px;
